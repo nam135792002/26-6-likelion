@@ -13,32 +13,15 @@ public class Customer {
         this.savingAccount = new SavingAccount();
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public CurrentAccount getCurrentAccount() {
         return currentAccount;
-    }
-
-    public void setCurrentAccount(CurrentAccount currentAccount) {
-        this.currentAccount = currentAccount;
     }
 
     public SavingAccount getSavingAccount() {
         return savingAccount;
     }
 
-    public void setSavingAccount(SavingAccount savingAccount) {
-        this.savingAccount = savingAccount;
-    }
-
-    public static Customer addCustomer(){
-        Customer customer = new Customer();
+    public void addCustomer(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println(">> Enter the info customer");
@@ -48,16 +31,10 @@ public class Customer {
         System.out.print("Enter the name: ");
         String name = sc.nextLine();
 
-        customer.setId(id);
-        customer.setName(name);
-
-        CurrentAccount currentAccount = CurrentAccount.create();
-        customer.setCurrentAccount(currentAccount);
-
-        SavingAccount savingAccount = SavingAccount.create();
-        customer.setSavingAccount(savingAccount);
-
-        return customer;
+        this.id = id;
+        this.name = name;
+        this.currentAccount.create();
+        this.savingAccount.create();
     }
 
 

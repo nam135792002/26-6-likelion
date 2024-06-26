@@ -15,14 +15,6 @@ public class CurrentAccount implements Account{
         this.overdraft = BigDecimal.valueOf(0);
     }
 
-    public void setDeposit(BigDecimal deposit) {
-        this.deposit = this.deposit.add(deposit);
-    }
-
-    public void setOverdraft(BigDecimal overdraft) {
-        this.overdraft = this.overdraft.add(overdraft);
-    }
-
     @Override
     public void send() {
         System.out.print("Enter the money which you want to send into current account: ");
@@ -57,17 +49,12 @@ public class CurrentAccount implements Account{
         System.out.println("Balance of Current Account: " + this.deposit);
     }
 
-    public static CurrentAccount create() {
-        CurrentAccount currentAccount = new CurrentAccount();
+    public void create() {
         System.out.println(">> Enter info current account.");
         System.out.print("Enter the deposit: ");
-        BigDecimal deposit = sc.nextBigDecimal();
+        this.deposit = sc.nextBigDecimal();
 
         System.out.print("Enter the overdraft limit: ");
-        BigDecimal overdraft = sc.nextBigDecimal();
-
-        currentAccount.setDeposit(deposit);
-        currentAccount.setOverdraft(overdraft);
-        return currentAccount;
+        this.overdraft = sc.nextBigDecimal();
     }
 }

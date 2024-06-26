@@ -2,7 +2,8 @@ package vn.edu.likelion.ex1;
 
 public class Main {
     public static void main(String[] args) {
-        Customer customer = Customer.addCustomer();
+        Customer customer = new Customer();
+        customer.addCustomer();
 
         System.out.println("--------------------------*------------------------------");
 

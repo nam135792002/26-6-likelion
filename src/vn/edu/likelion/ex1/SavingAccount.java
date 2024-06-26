@@ -14,26 +14,14 @@ public class SavingAccount implements Account{
         this.interest = 0.0;
     }
 
-    public void setDeposit(BigDecimal deposit) {
-        this.deposit = this.deposit.add(deposit);
-    }
-
-    public void setInterest(double interest) {
-        this.interest = interest;
-    }
-
-    public static SavingAccount create() {
-        SavingAccount savingAccount = new SavingAccount();
+    public void create() {
         System.out.println(">> Enter info saving account.");
 
         System.out.print("Enter the deposit: ");
-        BigDecimal deposit = sc.nextBigDecimal();
-        savingAccount.setDeposit(deposit);
+        this.deposit = sc.nextBigDecimal();
 
         System.out.print("Enter the interest rate: ");
-        double interest = sc.nextDouble();
-        savingAccount.setInterest(interest);
-        return savingAccount;
+        this.interest = sc.nextDouble();
     }
 
     @Override
